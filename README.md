@@ -77,7 +77,7 @@ public class User {
 */
 
 ```
-## 1.工厂调用
+## 2.工厂调用
 
 ```
 public class MainActivity extends AppCompatActivity {
