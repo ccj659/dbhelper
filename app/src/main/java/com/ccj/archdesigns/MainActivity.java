@@ -21,14 +21,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //要保证初始化一次,避免重复新建对象
         userDao = BaseDaoFactory.getInstance().getDBDao(User.class);
         cityDao = BaseDaoFactory.getInstance().getDBDao(City.class);
-        TLog.error(userDao.hashCode() + "----" + cityDao.hashCode());
 
     }
 
-
+    /**
+     * 保存城市
+     * @param v
+     */
     public void saveCity(View v) {
         City city = new City("青岛" + (index++), "0200");
         cityDao.insert(city);
@@ -36,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * 保存用户
+     * @param v
+     */
     public void saveUser(View v) {
         index++;
         User user = new User("ccj" + index, "123456");
@@ -45,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 更新用户
+     * @param v
+     */
     public void updateUser(View v) {
         User old = new User();
         old.name = "ccj1";
@@ -53,7 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * 查询用户
+     * @param v
+     */
     public void getUser(View v) {
         User user = new User();
         List<Object> userList = userDao.query(user, null, null);
@@ -62,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * 删除用户
+     * @param v
+     */
     public void deleteUser(View v) {
         User user = new User();
         userDao.delete(user);
