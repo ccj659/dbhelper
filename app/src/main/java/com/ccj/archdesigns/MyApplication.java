@@ -22,6 +22,7 @@ public class MyApplication  extends Application{
     public void onCreate() {
         super.onCreate();
 
+
         BaseDaoFactory.init(databaseDir,databaseName);
 
     }

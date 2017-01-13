@@ -70,7 +70,6 @@ public  class BaseDao<T> implements IBaseDao<T> {
 
     protected void initCache() {
         fieldArray = new ArrayList<>();
-
         Field[] fields = bean.getDeclaredFields();
         for (int i = 0; i < fields.length; i++) {
 
@@ -86,6 +85,7 @@ public  class BaseDao<T> implements IBaseDao<T> {
             }
 
             fieldArray.add(fields[i]);
+
         }
     }
 

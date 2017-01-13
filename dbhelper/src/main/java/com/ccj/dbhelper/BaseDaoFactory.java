@@ -34,8 +34,8 @@ public class BaseDaoFactory {
 
     /**
      * 初始化SQLite位置,默认位置是sd卡的/database/design.db
-     * @param databaseDir
-     * @param dbName
+     * @param databaseDir 数据库所在文件夹路径
+     * @param dbName 数据库名字
      */
     public static void init(String databaseDir,String dbName) {
         TLog.error(" init");
