@@ -77,7 +77,30 @@ public class User {
 */
 
 ```
-## 2.工厂调用
+
+## 2.在`Application`初始化`BaseDaoFactory`
+
+```java
+public class MyApplication  extends Application{
+
+
+    private  String databaseDir = Environment.getExternalStorageDirectory().getAbsolutePath()+"/database/";
+    private  String databaseName = "design.db";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        
+        BaseDaoFactory.init(databaseDir,databaseName);
+
+    }
+}
+
+
+```
+
+## 3.工厂调用
 
 ```
 public class MainActivity extends AppCompatActivity {
