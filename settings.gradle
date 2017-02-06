@@ -1,1 +1,1 @@
-include ':app', ':dbhelper'
+include ':app', ':dbhelper', ':nethelper'

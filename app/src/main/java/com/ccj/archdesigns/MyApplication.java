@@ -4,9 +4,7 @@ import android.app.Application;
 import android.os.Environment;
 
 import com.ccj.dbhelper.BaseDaoFactory;
-import com.ccj.dbhelper.TLog;
 
-import java.io.File;
 
 /**
  * Created by ccj on 2017/1/13.
